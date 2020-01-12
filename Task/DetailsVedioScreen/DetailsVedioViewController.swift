@@ -21,6 +21,7 @@ class DetailsVedioViewController: UIViewController, DetailsVedioDisplayLogic
   var interactor: DetailsVedioBusinessLogic?
   var router: (NSObjectProtocol & DetailsVedioRoutingLogic & DetailsVedioDataPassing)?
  
+    @IBOutlet weak var playButton: UIButton!
     var videoPreviewLooper : VideoLooperView?
     @IBOutlet weak var titleOfVedio: UILabel!
     
@@ -95,8 +96,10 @@ class DetailsVedioViewController: UIViewController, DetailsVedioDisplayLogic
 func displayVideoInfo(response video:Video )
 {
     videoPreviewLooper = VideoLooperView(video: video)
+    videoPreviewLooper!.detailsVedioViewController = self
     titleOfVedio.text = video.title
     descriptionOfVedio.text = "Description dummy data" + video.subtitle
     linkOfVideo.text = video.thumbURL
+    //playButton.titleLabel = ""
 }
 }

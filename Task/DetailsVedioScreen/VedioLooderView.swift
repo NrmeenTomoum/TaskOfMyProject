@@ -8,9 +8,11 @@
 
 import Foundation
 import UIKit
+import AVKit
 import AVFoundation
 
 class VideoLooperView: UIView {
+    var detailsVedioViewController : DetailsVedioViewController?
   let videoPlayerView = VideoPlayerView()
     var videoURl : URL?
   // 9 Add player
@@ -32,7 +34,7 @@ class VideoLooperView: UIView {
     player = AVPlayer(url: videoURl!)
     
     videoPlayerView.player = player
-    
+  //  videoPlayerView.addGestureRecognizers
     player.volume = 0.0
     player.play()
     
@@ -79,14 +81,22 @@ class VideoLooperView: UIView {
     addGestureRecognizer(doubleTap)
   }
   
-  // 13a Single tapping should toggle the volume
+  // 13a Single tapping
   @objc func wasTapped() {
-    player.volume = player.volume == 1.0 ? 0.0 : 1.0
+    
+        let player = AVPlayer(url: videoURl!)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+    detailsVedioViewController!.present(playerViewController, animated: true) {
+          player.play()
+        }
+    
   }
   
-  // 13b Double tapping should toggle the rate between 2x and 1x
+  // 13b Double tapping should  should toggle the volume
   @objc func wasDoubleTapped() {
-    player.rate = player.rate == 1.0 ? 2.0 : 1.0
+    
+   player.volume = player.volume == 1.0 ? 0.0 : 1.0
   }
   
   // MARK - Unnecessary Code

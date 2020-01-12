@@ -43,6 +43,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkO-i8-OWZ">
+                                <rect key="frame" x="159" y="302.5" width="96" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="kcI-4q-laA"/>
+                                </constraints>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Play" image="play.fill" catalog="system">
+                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -50,8 +60,10 @@
                             <constraint firstItem="LLE-ry-ZBw" firstAttribute="centerY" secondItem="uFp-9W-YbO" secondAttribute="centerY" id="4eO-kg-YwA"/>
                             <constraint firstItem="cPd-1l-Pbj" firstAttribute="trailing" secondItem="LLE-ry-ZBw" secondAttribute="trailing" id="5x7-Sh-wjS"/>
                             <constraint firstItem="Wau-DM-AmD" firstAttribute="trailing" secondItem="LLE-ry-ZBw" secondAttribute="trailing" id="7qP-NF-D3X"/>
+                            <constraint firstItem="BkO-i8-OWZ" firstAttribute="centerY" secondItem="uFp-9W-YbO" secondAttribute="centerY" multiplier="0.7" id="9sm-E4-efF"/>
                             <constraint firstItem="Wau-DM-AmD" firstAttribute="leading" secondItem="LLE-ry-ZBw" secondAttribute="leading" id="IJX-mr-AN7"/>
                             <constraint firstItem="hs7-k9-n5X" firstAttribute="trailing" secondItem="LLE-ry-ZBw" secondAttribute="trailing" constant="20" id="JZc-kZ-adL"/>
+                            <constraint firstItem="BkO-i8-OWZ" firstAttribute="centerX" secondItem="uFp-9W-YbO" secondAttribute="centerX" id="K88-hg-jmz"/>
                             <constraint firstItem="Wau-DM-AmD" firstAttribute="top" secondItem="cPd-1l-Pbj" secondAttribute="bottom" constant="10" id="TWY-NT-Goh"/>
                             <constraint firstItem="cPd-1l-Pbj" firstAttribute="leading" secondItem="LLE-ry-ZBw" secondAttribute="leading" id="mIF-RV-VN4"/>
                             <constraint firstItem="LLE-ry-ZBw" firstAttribute="leading" secondItem="hs7-k9-n5X" secondAttribute="leading" constant="20" id="oAr-0F-UeW"/>
@@ -61,6 +73,7 @@
                     <connections>
                         <outlet property="descriptionOfVedio" destination="cPd-1l-Pbj" id="yTf-y7-nlc"/>
                         <outlet property="linkOfVideo" destination="Wau-DM-AmD" id="8bA-Gx-zil"/>
+                        <outlet property="playButton" destination="BkO-i8-OWZ" id="eId-D9-8Lk"/>
                         <outlet property="titleOfVedio" destination="LLE-ry-ZBw" id="m0C-cH-dFv"/>
                     </connections>
                 </viewController>
@@ -87,4 +100,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play.fill" catalog="system" width="58" height="64"/>
+    </resources>
 </document>
